@@ -8,7 +8,7 @@ package v1alpha1
 )
 
  const (
-	kindLoadTest = "Loadtest"
+	kindLoadtest = "Loadtest"
 )
 
  // NewLoadtestCRD returns a new custom resource definition for LoadTest. This

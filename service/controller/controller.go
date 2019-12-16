@@ -58,12 +58,12 @@ func newTODOResourceSets(config TODOConfig) ([]*controller.ResourceSet, error) {
 
 	var resourceSet *controller.ResourceSet
 	{
-		c := todoResourceSetConfig{
+		c := resourceSetConfig{
 			K8sClient: config.K8sClient,
 			Logger:    config.Logger,
 		}
 
-		resourceSet, err = newTODOResourceSet(c)
+		resourceSet, err = newResourceSet(c)
 		if err != nil {
 			return nil, microerror.Mask(err)
 		}

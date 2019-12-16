@@ -70,7 +70,7 @@
 
 [[projects]]
   branch = "add-load-balancer"
-  digest = "1:1f6b57de4c4e7db1345c8c4188c7dac0ccb550c9b0e8d267db5da08a2cbdfa4f"
+  digest = "1:82f76d268d53e91b892fe87da19401c7a81531772c4b4600f9d6859a22641685"
   name = "github.com/giantswarm/apiextensions"
   packages = [
     "pkg/apis/application/v1alpha1",
@@ -89,7 +89,7 @@
     "pkg/clientset/versioned/typed/release/v1alpha1",
   ]
   pruneopts = "UT"
-  revision = "058c3f9f4b5e4362c609f58d5a982c576cb79e46"
+  revision = "1ac081f61359909324c39c4c26c7fd8dff2dfcbd"
 
 [[projects]]
   branch = "master"
