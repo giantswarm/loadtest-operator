@@ -36,6 +36,7 @@ type CoreV1alpha1Interface interface {
 	FlannelConfigsGetter
 	IngressConfigsGetter
 	KVMClusterConfigsGetter
+	LoadtestsGetter
 	NodeConfigsGetter
 	StorageConfigsGetter
 }
@@ -83,6 +84,10 @@ func (c *CoreV1alpha1Client) IngressConfigs(namespace string) IngressConfigInter
 
 func (c *CoreV1alpha1Client) KVMClusterConfigs(namespace string) KVMClusterConfigInterface {
 	return newKVMClusterConfigs(c, namespace)
+}
+
+func (c *CoreV1alpha1Client) Loadtests(namespace string) LoadtestInterface {
+	return newLoadtests(c, namespace)
 }
 
 func (c *CoreV1alpha1Client) NodeConfigs(namespace string) NodeConfigInterface {

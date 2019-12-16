@@ -38,6 +38,8 @@ type IngressConfigExpansion interface{}
 
 type KVMClusterConfigExpansion interface{}
 
+type LoadtestExpansion interface{}
+
 type NodeConfigExpansion interface{}
 
 type StorageConfigExpansion interface{}

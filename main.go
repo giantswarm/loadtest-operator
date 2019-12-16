@@ -10,10 +10,10 @@ import (
 	"github.com/giantswarm/versionbundle"
 	"github.com/spf13/viper"
 
-	"github.com/giantswarm/template-operator/flag"
-	"github.com/giantswarm/template-operator/pkg/project"
-	"github.com/giantswarm/template-operator/server"
-	"github.com/giantswarm/template-operator/service"
+	"github.com/giantswarm/loadtest-operator/flag"
+	"github.com/giantswarm/loadtest-operator/pkg/project"
+	"github.com/giantswarm/loadtest-operator/server"
+	"github.com/giantswarm/loadtest-operator/service"
 )
 
 var (
