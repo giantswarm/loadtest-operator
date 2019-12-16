@@ -1,4 +1,3 @@
-
 version: 2.1
 
 orbs:
@@ -9,7 +8,7 @@ workflows:
     jobs:
       - architect/go-build:
           name: build
-          binary: loadtest-meta-operator
+          binary: loadtest-operator
           filters:
             tags:
               only: /^v.*/
@@ -22,7 +21,7 @@ workflows:
 
       - architect/push-to-docker:
           name: docker
-          image: "quay.io/giantswarm/prometheus-meta-operator"
+          image: "quay.io/giantswarm/loadtest-operator"
           username_envar: "QUAY_USERNAME"
           password_envar: "QUAY_PASSWORD"
           requires:
@@ -45,7 +44,7 @@ workflows:
 
       - architect/push-to-app-collection:
           name: app-collection
-          app_name: "loadtest-meta-operator"
+          app_name: "loadtest-operator"
           app_collection_repo: "operator-week-app-collection"
           requires:
             - app-catalog
