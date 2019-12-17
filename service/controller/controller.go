@@ -1,6 +1,7 @@
 package controller
 
 import (
+	"github.com/giantswarm/apiextensions/pkg/apis/core/v1alpha1"
 	"github.com/giantswarm/k8sclient"
 	"github.com/giantswarm/microerror"
 	"github.com/giantswarm/micrologger"
@@ -9,21 +10,22 @@ import (
 	"k8s.io/apimachinery/pkg/runtime"
 
 	"github.com/giantswarm/loadtest-operator/pkg/project"
+	
 )
 
-type TODOConfig struct {
+type ControllerConfig struct {
 	K8sClient k8sclient.Interface
 	Logger    micrologger.Logger
 }
 
-type TODO struct {
+type Controller struct {
 	*controller.Controller
 }
 
-func NewTODO(config TODOConfig) (*TODO, error) {
+func NewController(config ControllerConfig) (*Controller, error) {
 	var err error
 
-	resourceSets, err := newTODOResourceSets(config)
+	resourceSets, err := newControllerResourceSets(config)
 	if err != nil {
 		return nil, microerror.Mask(err)
 	}
@@ -31,6 +33,7 @@ func NewTODO(config TODOConfig) (*TODO, error) {
 	var operatorkitController *controller.Controller
 	{
 		c := controller.Config{
+			K8sClient:    config.K8sClient,
 			Logger:       config.Logger,
 			ResourceSets: resourceSets,
 			NewRuntimeObjectFunc: func() runtime.Object {
@@ -46,14 +49,14 @@ func NewTODO(config TODOConfig) (*TODO, error) {
 		}
 	}
 
-	c := &TODO{
+	c := &Controller{
 		Controller: operatorkitController,
 	}
 
 	return c, nil
 }
 
-func newTODOResourceSets(config TODOConfig) ([]*controller.ResourceSet, error) {
+func newControllerResourceSets(config ControllerConfig) ([]*controller.ResourceSet, error) {
 	var err error
 
 	var resourceSet *controller.ResourceSet
