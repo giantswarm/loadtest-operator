@@ -40,7 +40,9 @@ jobs:
 workflows:
   build:
     jobs:
-      - build:
+      - architect/go-build:
+          name: build
+          binary: loadtest-operator 
           filters:
             tags:
               only: /^v.*/

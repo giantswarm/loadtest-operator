@@ -1,3 +1,4 @@
 *.swp
 TODO
 /loadtest-operator
+!vendor/**
