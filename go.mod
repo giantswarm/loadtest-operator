@@ -29,7 +29,7 @@ require (
 	golang.org/x/sys v0.0.0-20190826190057-c7b8b68b1456 // indirect
 	gopkg.in/yaml.v2 v2.2.7 // indirect
 	k8s.io/api v0.16.4
-	k8s.io/apimachinery v0.16.4
+	k8s.io/apimachinery v0.18.0
 	k8s.io/client-go v0.16.4
 	k8s.io/klog v1.0.0 // indirect
 	k8s.io/kube-openapi v0.0.0-20191107075043-30be4d16710a // indirect
